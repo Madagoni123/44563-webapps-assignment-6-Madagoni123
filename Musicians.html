@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html>
- <head> 
-    <Title>Musicians by Anusha</Title>
- </head>
-<body>
-<h1>Musician guess by Anusha</h1>
-<h2>Getting input</h2>
+<head>    
+    <title>Music page</title>
+</head>
+ 
+<body style="padding: 50px; background-color: rgb(213, 206, 255);">
 
-<form>
-    <label for="form1_password">Enter the secret musician name  </label>
-    <input type ="password" id="form1_password" name="form1_password" value= "John Lennon"> <br>
+<h1 style="text-align:center;">Musician guess by anusha</h1>
 
-    <label for="form1_name">Guess the musician </label>
-    <input type ="text" id="form1_name" name="form1_name" autofocus> <br>
+<form style="background-color:rgb(240, 187, 88); text-align: center; padding: 20px; margin-left: 40px; margin-right: 40px;">
+    <label style="text-align: center;"for="MusicianName">Enter the secret musician name</label>
+    <input type ="password" id="MusicianName" name="MusicianName" value="John Lennon"> <br>
+<h1 style="padding-left: 2px;"></h1>
+    <label for="guessName">Guess the musician</label>
+    <input type ="text" id="guessName" name="guessName" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type="button" onclick="checkGuess()" value="check the guess">
+    <p id="result">Checking the count of Correct & Wrong answers</p>
 </form>
 
-
-<p id="result">results will be dispalyed here </p>
-
 <script> 
-var correct=0
-var wrong=0
+var correct = 0
+var wrong = 0
 function checkGuess(){
+    console.log("Getting form values")
+    name = document.getElementById("MusicianName").value
+    guess = document.getElementById("guessName").value
     
-    age = document.getElementById("form1_password").value
-    nick = document.getElementById("form1_name").value
-    
-    out = document.getElementById("result")
-    if(age==nick){
-        correct+=1
-        alert=alert("You got it right")
-    } 
-    else {
-        wrong+=1
-        alertwrng=alert("wrong musician")
+    if(name === guess){
+        correct = correct + 1
+        alert("You got it right")
+    } else {
+        wrong = wrong + 1 
+        alert("wrong musician")
+
     }
-    out.innerHTML="Right"+correct+"wrong"+wrong
+    document.getElementById("result").innerHTML = "wrong guess :" + wrong + "\n correct guess :" + correct
 }
+</script>
+
+    <div style="text-align: center;padding: 75px 75px"><img src="Alderflies.jpg" id="insect" height="100px" width="100px" onclick="swapImage()"></div>
+
+    <script>
+        var useImage = 1;
+        function swapImage()
+        {
+            switch(useImage){
+                case 1:
+                document.getElementById("insect").src="Alderflies.jpg"
+                useImage=2;
+                break;
+                case 2:
+                document.getElementById("insect").src="Dragonflies.jpg"
+                useImage=3;
+               break;
+                case 3:
+                document.getElementById("insect").src="maggot.jpg"
+                useImage=4;
+                break;
+                 }
+        }
+
+
 </script>
 
 </body>
