@@ -39,7 +39,7 @@ function checkGuess(){
 }
 </script>
 
-    <div style="text-align: center;padding: 75px 75px"><img src="Ant.jpg" id="insect" height="100px" width="100px" onclick="swapImage()"></div>
+    <div style="text-align: center;padding: 75px 75px"><img src="Alderflies.jpg" id="insect" height="100px" width="100px" onclick="swapImage()"></div>
 
     <script>
         var useImage = 1;
@@ -47,30 +47,18 @@ function checkGuess(){
         {
             switch(useImage){
                 case 1:
-                document.getElementById("insect").src="Earthworm.jpg"
+                document.getElementById("insect").src="Alderflies.jpg"
                 useImage=2;
                 break;
                 case 2:
-                document.getElementById("insect").src="Honeybee.jpg"
+                document.getElementById("insect").src="Dragonflies.jpg"
                 useImage=3;
                break;
                 case 3:
-                document.getElementById("insect").src="Katydids.jpg"
+                document.getElementById("insect").src="maggot.jpg"
                 useImage=4;
                 break;
-                case 4:
-                document.getElementById("insect").src="Ladybug.jpg"
-                useImage=5;
-                break;
-                case 5:
-                document.getElementById("insect").src="Termite.jpg"
-                useImage=6;
-                break;
-                case 6:
-                document.getElementById("insect").src="Ant.jpg"
-                useImage=1;
-                break;
-            }
+                 }
         }
 
 
