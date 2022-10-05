@@ -15,7 +15,7 @@
     <label for="guessName">Guess the musician</label>
     <input type ="text" id="guessName" name="guessName" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="check the guess">
+    <input type="button" onclick="checkGuess()" value="check the guess" id="bonus">
     <p id="result">Checking the count of Correct & Wrong answers</p>
 </form>
 
@@ -35,7 +35,13 @@ function checkGuess(){
         alert("wrong musician")
 
     }
-    document.getElementById("result").innerHTML = "wrong guess :" + wrong + "\n correct guess :" + correct
+    if(wrong==3){
+        document.getElementById("bonus").onclick = Bonus()
+    }
+ document.getElementById("result").innerHTML = "wrong guess :" + wrong + "\n correct guess :" + correct
+}
+function Bonus(){
+    alert("Sorry, game over" )
 }
 </script>
 
